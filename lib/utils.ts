@@ -21,7 +21,7 @@ export const connectToDb = async () => {
 }
 
 export const getEntriesData = async () => {
-    const res = await fetch(`${process.env.API_URL}/api/entries`)
+    const res = await fetch(`http:localhost:3000/api/entries`)
   
     if (!res.ok) {
       throw new Error("Something went wrong")
