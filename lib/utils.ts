@@ -12,7 +12,7 @@ export const connectToDb = async () => {
             return;
         }
         const db = await mongoose.connect(process.env.MONGO); 
-        connection.isConnected = db.connection[0].readyState;
+        connection.isConnected = db.connection[0];
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         console.log(error)
@@ -21,7 +21,8 @@ export const connectToDb = async () => {
 }
 
 export const getEntriesData = async () => {
-    const res = await fetch(`http://localhost:3000/api/entries`)
+
+    const res = await fetch(`${process.env.API_URL}/api/entries`)
   
     if (!res.ok) {
       throw new Error("Something went wrong")
