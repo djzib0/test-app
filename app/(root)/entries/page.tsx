@@ -1,3 +1,4 @@
+import EntriesContainer from '@/app/components/entriesContainer/EntriesContainer';
 import { getEntriesData } from '@/lib/utils';
 import React from 'react'
 
@@ -14,7 +15,7 @@ const EntriesPage = async () => {
 
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
-        {entriesArr}
+        <EntriesContainer entries={entriesArr} />
     </div>
   )
 }
