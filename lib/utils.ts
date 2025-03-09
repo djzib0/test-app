@@ -21,15 +21,11 @@ export const connectToDb = async () => {
 }
 
 export const getEntriesData = async () => {
-    const res = await fetch(`http:localhost:3000/api/entries`)
+    const res = await fetch(`http://localhost:3000/api/entries`)
   
     if (!res.ok) {
       throw new Error("Something went wrong")
     }
   
     return res.json();
-  }
-
-  export const capitalizeFirstLetter = (str: string): string =>  {
-    return str.slice(0, 1).toUpperCase() + str.slice(1)
   }
