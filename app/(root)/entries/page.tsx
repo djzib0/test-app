@@ -6,6 +6,12 @@ const EntriesPage = async () => {
 
   const entries = await getEntriesData();
 
+  if (!entries) {
+    return (
+      <div>No data</div>
+    )
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const entriesArr = entries.map((entry: any) => {
     return (
